@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ultralight Responsive Grid</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/ultralight.css">
+        <link rel="stylesheet" href="../css/text.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="cntr lpd txtcnt">
+                <div class="rw">
+                    <div class="cl">
+                        <h1>Ultralight Responsive Grid</h1>
+                        <p>12 columns light weight responsive grid keeping the filesize light so that can be downloaded faster. It is based on Mobile first or small screen first.</p>
+                        <p>
+                            <a href="ultralight-responsive-grid" class="btn"><span class="fa fa-globe"></span> Webpage</a>
+                            <a href="https://github.com/neerajmourya/ultralight-responsive-grid" class="btn"><span class="fa fa-github"></span> Github</a>
+                            <a href="https://github.com/neerajmourya/ultralight-responsive-grid/archive/v2.0.zip" class="btn"><span class="fa fa-download"></span> Download</a>
+                        </p>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="main">
+            <div class="cntr lpd">
+                <div class="rw">
+                    <div class="cl">
+                        <div id="how-to-install" class="block">
+                            <h4 class="block-title">How to Install</h4>
+                            <div class="block-container">
+                                <p>Add Stylesheet to html head section as following.</p>
+                                <pre class="code"><!--
+                                 --><code>&lt;link rel="stylesheet" href="..path-to-directory/ultralight.css"&gt;</code><!--                         
+                             --></pre>    
+                            </div>    
+                        </div><!--/#how-to-install-->
+
+                        <div id="how-to-use" class="block">
+                            <h4 class="block-title">How to Use</h4>
+                            <div class="block-container">
+                                <h5>Basic Example</h5>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="<span class="highlight">cntr</span>"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="<span class="highlight">rw</span>"&gt; <span class="comment">&lt;!--Creates a row--&gt;</span></code><!--
+                                 --><code>    &lt;div class="<span class="highlight">cl m6</span>"&gt; <span class="comment">&lt;!--Creates a column of width 6--&gt;</span></code><!--
+                                 --><code>      column 1</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="<span class="highlight">cl m6</span>"&gt; <span class="comment">&lt;!--Creates a column of width 6--&gt;</span></code><!--
+                                 --><code>      column 2</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--                                 
+                             --></pre>    
+                                <div class="rw">
+                                    <div class="cl m6 aux-border">
+                                        column 1
+                                    </div>
+                                    <div class="cl m6 aux-border">
+                                        column 2
+                                    </div>
+                                </div>
+                                
+                                <br><br>
+                                <h5>Example</h5>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw"&gt; <span class="comment">&lt;!--Creates a row--&gt;</span></code><!--
+                                 --><code>    &lt;div class="<span class="highlight">cl s12 m6 l4</span>"&gt; </code><!--
+                                 --><code>      column 1</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="<span class="highlight">cl s12 m6 l4</span>"&gt; </code><!--
+                                 --><code>      column 2</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="<span class="highlight">cl s12 m6 l4</span>"&gt; </code><!--
+                                 --><code>      column 3</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--                                 
+                             --></pre>    
+                                <div class="rw">
+                                    <div class="cl s12 m6 l4 aux-border">
+                                        column 1
+                                    </div>
+                                    <div class="cl s12 m6 l4 aux-border">
+                                        column 2
+                                    </div>
+                                    <div class="cl s12 m6 l4 aux-border">
+                                        column 3
+                                    </div>
+                                </div>
+                                <br>
+                                <p>
+                                    Above code will create 1 column layout on small screen, 2 columns layout on medium screens, and 3 columns layout on large screens.
+                                </p>
+                                
+                                <br><br>
+                                <h5>Grid System</h5>
+                                <p>
+                                    s1, s2, s3 .................s12 classes can be used to create columns for small screens.<br>
+                                    m1, m2, m3 .................m12 classes can be used to create columns for medium screens.<br>
+                                    l1, l2, l3 .................m12 classes can be used to create columns for large screens.<br>
+                                    xl1,xl2,xl3.................xl12 classes can be used to create columns for extra large screens.<br>
+                                    xxl1,xxl2,xxl3.................xxl12 classes can be used to create columns for double extra large screens.<br>
+                                </p>
+
+                                <br>
+                                <h5>Collapse gutters</h5>
+                                <p>Add class <strong>ngt</strong> to row.</p>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw <span class="highlight">ngt</span>"&gt; <span class="comment">&lt;!--Creates a row, class "ngt" collapse gutters--&gt;</span></code><!--
+                                 --><code>    &lt;div class="cl s12 m6 l4"&gt; </code><!--
+                                 --><code>      column 1</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    -----------------------</code><!--                                 
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--                                 
+                             --></pre>
+
+                                <br><br>
+                                <h5>Push Columns</h5>
+                                <p>
+                                    To push columns on small screens use : <strong>spus1, spus2, spus3 .......................spus12</strong><br>
+                                    To push columns on medium screens use : <strong>mpus1, mpus2, mpus3 .......................mpus12</strong><br>
+                                    To push columns on large screens use : <strong>lpus1, lpus2, lpus3 .......................lpus12</strong><br>
+                                    To push columns on extra large screens use : <strong>xlpus1, xlpus2, xlpus3 .......................xlpus12</strong><br>
+                                    To push columns on double extra large screens use : <strong>xxlpus1, xxlpus2, xxlpus3 .......................xxlpus12</strong><br>
+                                </p>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw"&gt; <span class="comment">&lt;!--Creates a row--&gt;</span></code><!--
+                                 --><code>    &lt;div class="cl s4"&gt; <span class="comment">&lt;!--Creates a column of width 4--&gt;</span></code><!--
+                                 --><code>      column 1</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl s4 <span class="highlight">spus4</span>"&gt; <span class="comment">&lt;!--Creates a column of width 4, Pushing 4 columns--&gt;</span></code><!--
+                                 --><code>      column 2</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--
+                             --></pre>
+                                <div class="rw">
+                                    <div class="cl s4 aux-border">
+                                        column 1
+                                    </div>
+                                    <div class="cl s4 spus4 aux-border">
+                                        column 2
+                                    </div>
+                                </div>
+
+                                <br><br>
+                                <h5>Pull Columns</h5>
+                                <p>
+                                    To pull columns on small screens use : <strong>spul1, spul2, spul3 .......................spul12</strong><br>
+                                    To pull columns on medium screens use : <strong>mpul1, mpul2, mpul3 .......................mpul12</strong><br>
+                                    To pull columns on large screens use : <strong>lpul1, lpul2, lpul3 .......................lpul12</strong><br>
+                                    To pull columns on extra large screens use : <strong>xlpul1, xlpul2, xlpul3 .......................xlpul12</strong><br>
+                                    To pull columns on double extra large screens use : <strong>xxlpul1, xxlpul2, xxlpul3 .......................xxlpul12</strong><br>
+                                </p>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw"&gt; &lt;!--Creates a row--&gt;</code><!--
+                                 --><code>    &lt;div class="cl s4"&gt; <span class="comment">&lt;!--Creates a column of width 4--&gt;</span></code><!--
+                                 --><code>      column 1</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl s4 <span class="highlight">spus4</span>"&gt; <span class="comment">&lt;!--Creates a column of width 4, Pushing 4 columns--&gt;</span></code><!--
+                                 --><code>      column 2</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl s4 <span class="highlight">spul4</span>"&gt; <span class="comment">&lt;!--Creates a column of width 4, Pulling 4 columns--&gt;</span></code><!--
+                                 --><code>      column 3</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--
+                             --></pre>
+                                <div class="rw">
+                                    <div class="cl s4 aux-border">
+                                        column 1
+                                    </div>
+                                    <div class="cl s4 spus4 aux-border">
+                                        column 2
+                                    </div>
+                                    <div class="cl s4 spul4 aux-border">
+                                        column 3
+                                    </div>
+                                </div>
+
+
+                                <br><br>
+                                <h5>Hide Elements</h5>
+                                <p>
+                                    <strong>shid</strong> to hide on small and up screens.<br>
+                                    <strong>mhid</strong> to hide on medium and up screens.<br>
+                                    <strong>lhid</strong> to hide on large and up screens.<br>
+                                    <strong>xlhid</strong> to hide on extra large and up screens.<br>
+                                    <strong>xxlhid</strong> to hide on double extra large and up screens.<br>
+                                </p>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw"&gt; <span class="comment">&lt;!--Creates a row--&gt;</span></code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">shid</span>"&gt; <span class="comment">&lt;!--hide on small and up--&gt;</span></code><!--
+                                 --><code>      Hide for Small & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">mhid</span>"&gt; <span class="comment">&lt;!--hide on medium and up--&gt;</span></code><!--
+                                 --><code>      Hide for Medium & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">lhid</span>"&gt; <span class="comment">&lt;!--hide on large and up--&gt;</span></code><!--
+                                 --><code>      Hide for Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">xlhid</span>"&gt; <span class="comment">&lt;!--hide on extra large and up--&gt;</span></code><!--
+                                 --><code>      Hide for Extra Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">xxlhid</span>"&gt; <span class="comment">&lt;!--hide on double extra large and up--&gt;</span></code><!--
+                                 --><code>      Hide for Double Extra Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--
+                             --></pre>
+                                
+                                  <div class="rw"> <!--Creates a row-->
+                                    <div class="cl shid aux-border"> <!--hide on small and up-->
+                                      Hide for Small & Up
+                                    </div>
+                                    <div class="cl mhid aux-border"> <!--hide on medium and up-->
+                                      Hide for Medium & Up
+                                    </div>
+                                    <div class="cl lhid aux-border"> <!--hide on large and up-->
+                                      Hide for Large & Up
+                                    </div>
+                                    <div class="cl xlhid aux-border"> <!--hide on extra large and up-->
+                                      Hide for Extra Large & Up
+                                    </div>
+                                    <div class="cl xxlhid aux-border"> <!--hide on double extra large and up-->
+                                      Hide for Double Extra Large & Up
+                                    </div>
+                                  </div>
+                                  
+                                <br><br>
+                                <h5>Show Elements</h5>
+                                <p>
+                                    <strong>sshw</strong> to show on small and up screens.<br>
+                                    <strong>mshw</strong> to show on medium and up screens.<br>
+                                    <strong>lshw</strong> to show on large and up screens.<br>
+                                    <strong>xlshw</strong> to show on extra large and up screens.<br>
+                                    <strong>xxlshw</strong> to show on double extra large and up screens.<br>
+                                </p>
+                                <pre class="code"><!--
+                                 --><code>&lt;div class="cntr"&gt; <span class="comment">&lt;!--Creates a boxed container--&gt;</span></code><!--
+                                 --><code>  &lt;div class="rw"&gt; <span class="comment">&lt;!--Creates a row--&gt;</span></code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">sshw</span>"&gt; <span class="comment">&lt;!--show on small and up--&gt;</span></code><!--
+                                 --><code>      show for Small & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">mshw</span>"&gt; <span class="comment">&lt;!--show on medium and up--&gt;</span></code><!--
+                                 --><code>      show for Medium & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">lshw</span>"&gt; <span class="comment">&lt;!--show on large and up--&gt;</span></code><!--
+                                 --><code>      show for Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">xlshw</span>"&gt; <span class="comment">&lt;!--show on extra large and up--&gt;</span></code><!--
+                                 --><code>      show for Extra Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>    &lt;div class="cl <span class="highlight">xxlshw</span>"&gt; <span class="comment">&lt;!--show on double extra large and up--&gt;</span></code><!--
+                                 --><code>      show for Double Extra Large & Up</code><!--
+                                 --><code>    &lt;/div&gt;</code><!--
+                                 --><code>  &lt;/div&gt;</code><!--
+                                 --><code>&lt;/div&gt;</code><!--
+                             --></pre>
+                                
+                                  <div class="rw"> <!--Creates a row-->
+                                    <div class="cl sshw aux-border"> <!--show on small and up-->
+                                      show for Small & Up
+                                    </div>
+                                    <div class="cl mshw aux-border"> <!--show on medium and up-->
+                                      show for Medium & Up
+                                    </div>
+                                    <div class="cl lshw aux-border"> <!--show on large and up-->
+                                      show for Large & Up
+                                    </div>
+                                    <div class="cl xlshw aux-border"> <!--show on extra large and up-->
+                                      show for Extra Large & Up
+                                    </div>
+                                    <div class="cl xxlshw aux-border"> <!--show on double extra large and up-->
+                                      show for Double Extra Large & Up
+                                    </div>
+                                  </div>
+                                  
+                                  <br><br>
+                                  <h5>Responsive Toggle points</h5>
+                                  <pre class="code"><!--
+                                 --><code>@media screen and (<span class="highlight">min-width:40.0em</span>) <span class="comment">/* Medium Screen & Up */</span></code><!--
+                                 --><code>@media screen and (<span class="highlight">min-width:64.0em</span>) <span class="comment">/* Large Screen & Up */</span></code><!--
+                                 --><code>@media screen and (<span class="highlight">min-width:75.0em</span>) <span class="comment">/* Extra Large Screen & Up */</span></code><!--
+                                 --><code>@media screen and (<span class="highlight">min-width:90.0em</span>) <span class="comment">/* Double Extra Large Screen & Up */</span></code><!--
+                               --></pre>
+                                  
+                            </div>
+                        </div><!--/#how-to-use-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="cntr">
+                <div class="rw">
+                    <div class="cl">
+                        &copy; 2017 <a href="http://neerajmourya.tumblr.com">Neeraj Mourya</a> | <a href="mailto:neerajmorya@gmail.com">neerajmorya@gmail.com</a> | <a href="http://www.egrapes.in">eGrapes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
