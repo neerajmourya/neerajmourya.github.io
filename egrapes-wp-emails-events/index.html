@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EGrapes WP Emails Events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/ultralight.css">
+        <link rel="stylesheet" href="../css/text.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="cntr lpd txtcnt">
+                <div class="rw">
+                    <div class="cl">
+                        <h1>Ultralight Responsive Grid</h1>
+                        <p>12 columns light weight responsive grid keeping the filesize light so that can be downloaded faster. It is based on Mobile first or small screen first.</p>
+                        <p>
+                        		<a href="http://www.egrapes.in/projects/egrapes-wp-emails-events" class="btn"><span class="fa fa-globe"></span> Webpage</a>
+                            <a href="egrapes-wp-emails-events" class="btn"><span class="fa fa-globe"></span> Getting Started</a>
+                            <a href="https://github.com/neerajmourya/egrapes-wp-emails-events" class="btn"><span class="fa fa-github"></span> Github</a>
+                            <a href="https://github.com/neerajmourya/egrapes-wp-emails-events/archive/1.0.0.zip" class="btn"><span class="fa fa-download"></span> Download</a>
+                        </p>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="main">
+            <div class="cntr lpd">
+                <div class="rw">
+                    <div class="cl">
+                        <div id="how-to-install" class="block">
+                            <h4 class="block-title">How to Install</h4>
+                            <div class="block-container">
+                                <p>Copy the plugin folder <strong>egrapes-wp-emails-events</strong> inside <strong>wp-content/plugins</strong> folder. Activate the plugin from wordpress dashboard.</p>                                
+                            </div>    
+                        </div><!--/#how-to-install-->
+
+                        <div id="how-to-use" class="block">
+                            <h4 class="block-title">How to Use</h4>
+                            <div class="block-container">
+                                <p>Write the code in your theme's functions.php or your custom plugin's file.</p>
+                                <p>To create an event group.</p>
+                                <pre class="code"><!--
+                                 --><code>add_filter('ewee_events_groups', 'custom_events_groups', 10, 1); <span class="comment">//adding mail events groups</span></code><!--
+                                 --><code>function custom_events_groups($events_groups){</code><!--
+                                 --><code>	$events_groups['products'] = 'Products';</code><!--
+                                 --><code>	return $events_groups;</code><!--
+                                 --><code>}</code><!--
+                                 --><code></code><!--
+                             --></pre>
+                                
+                                <br><br>
+                                <p>To create an event.</p>
+                                <pre class="code"><!--
+                                 --><code>add_filter('ewee_events', 'custom_mail_events', 10, 1); <span class="comment">//adding mail events</span></code><!--
+                                 --><code>function custom_mail_events($events){</code><!--
+                                 --><code>	$events['order_created'] = array(</code><!--
+                                 --><code>		'name' => 'Order Created', <span class="comment">//Name of the event.</span></code><!--
+                                 --><code>		'description' => 'When order created.', <span class="comment">//Description of the event.</span></code><!--
+                                 --><code>		'send' => true, <span class="comment">//Whether to use this event to send mail or not.</span></code><!--
+                                 --><code>		'subject' => 'Order %orderno% Created.', <span class="comment">//Subject of the message. can be modified from wp admin dashboard. Use token keys wrapped by %.</span></code><!--
+                                 --><code>		'message' => 'An Order with Order No. %orderno% has been created.', <span class="comment">//Message. can be modified from wp admin dashboard. Use token keys wrapped by %.</span></code><!--
+                                 --><code>		'tokens' => array('orderno'), <span class="comment">//Define tokens.</span></code><!--
+                                 --><code>		'group' => 'products', <span class="comment">//Event group.</span></code><!--
+                                 --><code>	);</code><!--
+                                 --><code>	return $events;</code><!--
+                                 --><code>}</code><!--
+                             --></pre>   
+                                
+                                <br><br>
+                                <p>
+                                		To trigger the event use send_mail method of <strong>EGrapesWPEmailsEvents</strong> class.<br>
+                                		<strong> public function send_mail($event_key, $tokens = array(), $to, $headers = '', $attachments = array())</strong>
+                                </p>
+                                <pre class="code"><!--
+                                 --><code>$eGrapesWPEmailsEvents = EGrapesWPEmailsEvents::get_instance(); <span class="comment">//Get the object of class EGrapesWPEmailsEvents.</span></code><!--
+                                 --><code>$eGrapesWPEmailsEvents->send_mail('order_created', array('orderno' => 'abc987'), 'abc@gmail.com'); <span class="comment">//call the method send_mail.</span></code><!--
+                             --></pre>
+                             
+                                
+                                  
+                            </div>
+                        </div><!--/#how-to-use-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="cntr">
+                <div class="rw">
+                    <div class="cl">
+                        &copy; 2017 <a href="http://neerajmourya.tumblr.com">Neeraj Mourya</a> | <a href="mailto:neerajmorya@gmail.com">neerajmorya@gmail.com</a> | <a href="http://www.egrapes.in">eGrapes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
